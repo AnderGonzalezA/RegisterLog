@@ -50,12 +50,11 @@ public class UsersAgenda {
 		return false;
 	}
 	public boolean addUser(User newUser) {
-		if (findUsername(newUser.getUsername())!=-1 && isValidPassword(newUser.getPassword())) {
-			users.add(newUser);
+		if (findUsername(newUser.getUsername())==-1 && isValidPassword(newUser.getPassword())) {
+			this.users.add(newUser);
 			return true;
-		}else {
-			return false;
 		}
+		return false;
 	}
 	public int logIn(User user) {
 		for (int i=0;i<this.users.size();i++) {
